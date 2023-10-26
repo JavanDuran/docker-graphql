@@ -30,10 +30,12 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t graphql-git:0.0.2 .
+        docker build -t graphql-git:latest .
 # Paso para subir imagen al DockerHub, debe ser usuario registrado y que pase el login
 #    - name: Push Docker image to DockerHub
 #      run: |
-#        docker push -t username/graphql-git:0.0.2 .
+#        docker push -t username/graphql-git:0.0.2
+#        docker push -t username/graphql-git:latest
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     

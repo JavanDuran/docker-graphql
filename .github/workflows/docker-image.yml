@@ -26,7 +26,14 @@ jobs:
 #     run: |
 #      echo "Inicio Login"
 #      docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-#      echo "Inicio Login"
+#      echo "Termina Login"
+    - name: Build Docker image
+      run: |
+        docker build -t graphql-git:0.0.2 .
+# Paso para subir imagen al DockerHub, debe ser usuario registrado y que pase el login
+#    - name: Push Docker image to DockerHub
+#      run: |
+#        docker push -t username/graphql-git:0.0.2 .
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     
